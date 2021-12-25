@@ -12,12 +12,11 @@
 
 
     if (isset($_POST['login'])) {
-        $servername = "localhost";
-        $username = "root";
-        $password = "";
-        $dbname='loginform';
-
-        $connection = new mysqli($servername, $username, $password, $dbname);
+    
+        include 'includes/dbh.inc.php';
+        $dbh = new Dbh();
+        
+        $connection = dbh.connect();
         
 
         $email = $connection->real_escape_string($_POST['emailPHP']);
