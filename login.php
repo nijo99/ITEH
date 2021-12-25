@@ -28,7 +28,7 @@
 
         if($data-> num_rows > 0){
             $_SESSION['loggedIN']='1';
-            $_SESSION['email'] = $email;
+            // $_SESSION['email'] = $email;
             exit('Uspesno ste se ulogovali!');
         } else
             exit("Neuspesan pokusaj! Probajte opet.");

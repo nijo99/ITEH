@@ -1,11 +1,14 @@
 <?php
 
-// session_start();
+session_start();
 
-// if(isset($_SESSION['registered'])){
-// 	header('Location: index.php');
-// 	exit();
-// }
+if(isset($_SESSION['loggedIN'])){
+	unset($_SESSION['loggedIN']);
+    session_destroy();
+
+    header('Location: login.php');
+    exit();
+}
 
 	//set default  values
 	$username = "";
