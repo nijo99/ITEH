@@ -1,3 +1,26 @@
+<?php
+include 'includes/dbh.inc.php';
+include 'includes/user.inc.php';
+include 'includes/viewuser.inc.php';
+
+?>
+
+
+<?php
+
+session_start();
+
+if(!isset($_SESSION['loggedIN'])) {
+    header('Location: login.php');
+    exit();
+    // uradjeno da ne bi mogao da uneses samo index.php u pretrazi i da ti otvori, nego se 
+    // proveri da li je loggedIN
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -34,6 +57,12 @@
 </nav>
 </header>
 
-<div class="txt1"> nnnnn</div>
+<a href="logout.php"> Log Out</a>
+<?php
+
+  $users = new ViewUser();
+  $users->showAllUsers();
+
+?>
 </body>
 </html>
