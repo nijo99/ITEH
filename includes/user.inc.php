@@ -75,6 +75,27 @@ class User extends Dbh{
 			return false;
 		}
 	}
+
+    public function filter_users($category){
+        $dbh= new Dbh();
+        $sql = "SELECT Naziv, Vreme, RadniDan FROM users u FULL OUTTER JOIN emisijatip et ON u.IDEmisije=et.IDEmisije FULL OUTTER JOIN tipemisije te ON te.IDTipa=et.IDTipa WHERE te.NazivTipa='$category'";
+        
+        
+        
+        $result = $dbh->connect()->query($sql);
+        
+        
+        if(!empty($result) && $result->num_rows > 0){
+            $numRows = $result->num_rows;
+            while($row = $result->fetch_assoc()){
+                $data[]=$row;
+            }
+            return $data;
+        }
+        else{
+            print("Doslo je do greske");
+        }
+    }
 }
 
 

@@ -1,7 +1,7 @@
 <?php
 
 
-class Dbh{
+class Dbe{
     private $servername;
     private $username;
     private $password;
@@ -13,7 +13,7 @@ public function connect(){
     $this->servername="localhost";
     $this->username="root";
     $this->password="";
-    $this->dbname="loginform";
+    $this->dbname="emisije";
 
     $conn = new mysqli($this->servername,
                         $this->username,

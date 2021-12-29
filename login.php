@@ -16,7 +16,7 @@
         include 'includes/dbh.inc.php';
         $dbh = new Dbh();
         
-        $connection = dbh.connect();
+        $connection = $dbh->connect();
         
 
         $email = $connection->real_escape_string($_POST['emailPHP']);
