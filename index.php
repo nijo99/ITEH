@@ -61,7 +61,7 @@ if(!isset($_SESSION['loggedIN'])) {
 <?php
 
   $users = new ViewUser();
-  $users->showAllUsers();
+  $users->show_filtered_users("Sport");
 
 ?>
 </body>
